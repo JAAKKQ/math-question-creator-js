@@ -1,24 +1,25 @@
 //--Default Difficulties--
-var AddDiff = 1;
-var SubDiff = 2;
-var DivDiff = 3;
-var MulDiff = 4;
+var AddDiff = 2;
+var SubDiff = 4;
+var DivDiff = 6;
+var MulDiff = 8;
 //------------------------
 
-module.exports = function() {
-
-  return {
-    New: function(cb) {
-        var a = Math.floor(Math.random() * 10) + 1;
-        var b = Math.floor(Math.random() * 10) + 1;
-        var c = [Math.floor(Math.random()*4)];
-        var op = ["+", "-", "/", "*"][c];
-        cb(Question, CalDiff(a, c, b));
-    },
-    CalDiff: function(a, b, c, cb) {
-        cb(CalDiff(a, c, b))
+module.exports = function(dir) {
+    dir = dir;
+    return {
+        new: function(cb) {
+            var a = Math.floor(Math.random() * 10) + 1;
+            var b = Math.floor(Math.random() * 10) + 1;
+            var c = [Math.floor(Math.random()*4)];
+            var op = ["+", "-", "/", "*"][c];
+            var Question = a + op + b;
+            cb(Question, CalDiff(a, c, b));
+        },
+        diff: function(a, b, c, cb) {
+            cb(CalDiff(a, c, b))
+        }
     }
-  }
 };
 
 //Main function
@@ -53,6 +54,6 @@ function CalNumDiff(a, b){
 
 //Calculate combined (CalTypeDif + CalNumDiff) difficulty.
 function CalComDiff(TypeDiff, NumDiff){
-    const TypeDiffAfterMult = +[TypeDiff] * +[NumDiff / 2];
+    const TypeDiffAfterMult = +[TypeDiff] * +[NumDiff];
     return TypeDiffAfterMult;
 }
