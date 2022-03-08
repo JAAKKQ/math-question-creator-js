@@ -1,0 +1,19 @@
+{
+  "name": "math-question-creator",
+  "version": "1.0.0",
+  "description": "This will create a very simple math question and give it a difficulty level.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAAKKQ/math-question-creator-js.git"
+  },
+  "author": "Jaakko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAAKKQ/math-question-creator-js/issues"
+  },
+  "homepage": "https://github.com/JAAKKQ/math-question-creator-js#readme"
+}
