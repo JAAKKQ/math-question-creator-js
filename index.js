@@ -46,9 +46,9 @@ function CalTypeDiff(Num){
 
 //Calculate question number difficulty.
 function CalNumDiff(a, b){
-    const a = Math.abs(a);
-    const b = Math.abs(b);
-    return +[a] + +[b];
+    const First= Math.abs(a);
+    const Second = Math.abs(b);
+    return +[First] + +[Second];
 };
 
 //Calculate combined (CalTypeDif + CalNumDiff) difficulty.
