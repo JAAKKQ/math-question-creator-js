@@ -16,8 +16,9 @@ module.exports = function(dir) {
             var Question = a + op + b;
             cb(Question, CalDiff(a, c, b));
         },
-        diff: function(a, b, c, cb) {
-            cb(CalDiff(a, c, b))
+        diff: function(Question, cb) {
+            const SplitQuestion = Question.split("+");
+            cb(CalDiff(SplitQuestion[0], SplitQuestion[1], SplitQuestion[3]))
         }
     }
 };
@@ -26,7 +27,7 @@ module.exports = function(dir) {
 function CalDiff(a, c, b){
     const TypeDiff = CalTypeDiff(c);
     const NumDiff = CalNumDiff(a, b);
-    return CalComDiff(TypeDiff, NumDiff);
+    return CalComDiff(TypeDiff, NumDiff) / 10;
 };
 
 //Calculate type difficulty with the default values.
